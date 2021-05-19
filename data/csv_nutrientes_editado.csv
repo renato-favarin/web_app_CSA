@@ -1,0 +1,334 @@
+|Food|Grams|Calories|Protein|Fat|Sat.Fat|Fiber|Carbs|Category
+0|Cows' milk|976.0|660.0|32.0|40.0|36.0|0.0|48.0|Dairy products
+1|Milk skim|984.0|360.0|36.0|0.0|0.0|0.0|52.0|Dairy products
+2|Buttermilk|246.0|127.0|9.0|5.0|4.0|0.0|13.0|Dairy products
+3|Evaporated, undiluted|252.0|345.0|16.0|20.0|18.0|0.0|24.0|Dairy products
+4|Fortified milk|1.419|1.373|89.0|42.0|23.0|1.4|119.0|Dairy products
+5|Powdered milk|103.0|515.0|27.0|28.0|24.0|0.0|39.0|Dairy products
+6|skim, instant|85.0|290.0|30.0|0.0|0.0|0.0|42.0|Dairy products
+7|skim, non-instant|85.0|290.0|30.0|0.0|0.0|1.0|42.0|Dairy products
+8|Goats' milk|244.0|165.0|8.0|10.0|8.0|0.0|11.0|Dairy products
+9|(1/2 cup ice cream)|540.0|690.0|24.0|24.0|22.0|0.0|70.0|Dairy products
+10|Cocoa|252.0|235.0|8.0|11.0|10.0|0.0|26.0|Dairy products
+11|skim. milk|250.0|128.0|18.0|4.0|3.0|1.0|13.0|Dairy products
+12|(cornstarch)|248.0|275.0|9.0|10.0|9.0|0.0|40.0|Dairy products
+13|Custard|248.0|285.0|13.0|14.0|11.0|0.0|28.0|Dairy products
+14|Ice cream|188.0|300.0|6.0|18.0|16.0|0.0|29.0|Dairy products
+15|Ice milk|190.0|275.0|9.0|10.0|9.0|0.0|32.0|Dairy products
+16|Cream or half-and-half|120.0|170.0|4.0|15.0|13.0|0.0|5.0|Dairy products
+17|or whipping|119.0|430.0|2.0|44.0|27.0|1.0|3.0|Dairy products
+18|Cheese|225.0|240.0|30.0|11.0|10.0|0.0|6.0|Dairy products
+19|uncreamed|225.0|195.0|38.0|0.0|0.0|0.0|6.0|Dairy products
+20|Cheddar|17.0|70.0|4.0|6.0|5.0|0.0|0.0|Dairy products
+21|Cheddar, grated cup|56.0|226.0|14.0|19.0|17.0|0.0|1.0|Dairy products
+22|Cream cheese|28.0|105.0|2.0|11.0|10.0|0.0|1.0|Dairy products
+23|Processed cheese|28.0|105.0|7.0|9.0|8.0|0.0|0.0|Dairy products
+24|Roquefort type|28.0|105.0|6.0|9.0|8.0|0.0|0.0|Dairy products
+25|Swiss|28.0|105.0|7.0|8.0|7.0|0.0|0.0|Dairy products
+26|Eggs raw|100.0|150.0|12.0|12.0|10.0|0.0|0.0|Dairy products
+27|Eggs Scrambled or fried|128.0|220.0|13.0|16.0|14.0|0.0|1.0|Dairy products
+28|Yolks|34.0|120.0|6.0|10.0|8.0|0.0|0.0|Fats, Oils, Shortenings
+29|Butter|14.0|100.0|0.0|11.0|10.0|0.0|0.0|Fats, Oils, Shortenings
+30|Butter|112.0|113.0|114.0|115.0|116.0|117.0|118.0|Fats, Oils, Shortenings
+31|Butter|112.0|113.0|114.0|115.0|116.0|117.0|118.0|Fats, Oils, Shortenings
+32|Hydrogenated cooking fat|100.0|665.0|0.0|100.0|88.0|0.0|0.0|Fats, Oils, Shortenings
+33|Lard|110.0|992.0|0.0|110.0|92.0|0.0|0.0|Fats, Oils, Shortenings
+34|Margarine|112.0|806.0|0.0|91.0|76.0|0.0|0.0|Fats, Oils, Shortenings
+35|Margarine, 2 pat or|14.0|100.0|0.0|11.0|9.0|0.0|0.0|Fats, Oils, Shortenings
+36|Mayonnaise|15.0|110.0|0.0|12.0|5.0|0.0|0.0|Fats, Oils, Shortenings
+37|Corn oil|14.0|125.0|0.0|14.0|5.0|0.0|0.0|Fats, Oils, Shortenings
+38|Olive oil|14.0|125.0|0.0|14.0|3.0|0.0|0.0|Fats, Oils, Shortenings
+39|Safflower seed oil|14.0|125.0|0.0|14.0|3.0|0.0|0.0|Fats, Oils, Shortenings
+40|French dressing|15.0|60.0|0.0|6.0|2.0|0.0|2.0|Fats, Oils, Shortenings
+41|Thousand Island sauce|15.0|75.0|0.0|8.0|3.0|0.0|1.0|Fats, Oils, Shortenings
+42|Salt pork|60.0|470.0|3.0|55.0|18.6|0.0|0.0|Meat, Poultry
+43|Bacon|16.0|95.0|4.0|8.0|7.0|0.0|1.0|Meat, Poultry
+44|Beef|85.0|245.0|23.0|16.0|15.0|0.0|0.0|Meat, Poultry
+45|Hamburger|85.0|245.0|21.0|17.0|15.0|0.0|0.0|Meat, Poultry
+46|Ground lean|85.0|185.0|24.0|10.0|9.0|0.0|0.0|Meat, Poultry
+47|Roast beef|85.0|390.0|16.0|36.0|35.0|0.0|0.0|Meat, Poultry
+48|Steak|85.0|330.0|20.0|27.0|25.0|0.0|0.0|Meat, Poultry
+49|Steak, lean, as round|85.0|220.0|24.0|12.0|11.0|0.0|0.0|Meat, Poultry
+50|Corned beef|85.0|185.0|22.0|10.0|9.0|0.0|0.0|Meat, Poultry
+51|Corned beef hash canned|85.0|120.0|12.0|8.0|7.0|0.0|6.0|Meat, Poultry
+52|Corned beef hash Dried|56.0|115.0|19.0|4.0|4.0|0.0|0.0|Meat, Poultry
+53|Pot-pie|227.0|480.0|18.0|28.0|25.0|0.0|32.0|Meat, Poultry
+54|Corned beef hash Stew|235.0|185.0|15.0|10.0|9.0|0.0|15.0|Meat, Poultry
+55|chicken|85.0|185.0|23.0|9.0|7.0|0.0|0.0|Meat, Poultry
+56|Fried, breast or leg and thigh chicken|85.0|245.0|25.0|15.0|11.0|0.0|0.0|Meat, Poultry
+57|Roasted chicken|100.0|290.0|25.0|20.0|16.0|0.0|0.0|Meat, Poultry
+58|Chicken livers, fried|100.0|140.0|22.0|14.0|12.0|0.0|2.3|Meat, Poultry
+59|Duck, domestic|100.0|370.0|16.0|28.0|0.0|0.0|0.0|Meat, Poultry
+60|Lamb, chop, broiled|115.0|480.0|24.0|35.0|33.0|0.0|0.0|Meat, Poultry
+61|Leg roasted|86.0|314.0|20.0|14.0|14.0|0.0|0.0|Meat, Poultry
+62|Shoulder, braised|85.0|285.0|18.0|23.0|21.0|0.0|0.0|Meat, Poultry
+63|Pork, chop, 1 thick|100.0|260.0|16.0|21.0|18.0|0.0|0.0|Meat, Poultry
+64|Ham pan-broiled|85.0|290.0|16.0|22.0|19.0|0.0|0.0|Meat, Poultry
+65|Ham, as |57.0|170.0|13.0|13.0|11.0|0.0|0.0|Meat, Poultry
+66|Ham, canned, spiced|57.0|165.0|8.0|14.0|12.0|0.0|1.0|Meat, Poultry
+67|Pork roast|85.0|310.0|21.0|24.0|21.0|0.0|0.0|Meat, Poultry
+68|Pork sausage|100.0|475.0|18.0|44.0|40.0|0.0|0.0|Meat, Poultry
+69|Turkey|100.0|265.0|27.0|15.0|0.0|0.0|0.0|Meat, Poultry
+70|Veal|85.0|185.0|23.0|9.0|8.0|0.0|0.0|Meat, Poultry
+71|Roast|85.0|305.0|13.0|14.0|13.0|0.0|0.0|Meat, Poultry
+72|Clams|85.0|87.0|12.0|1.0|0.0|0.0|2.0|Fish, Seafood
+73|Cod|100.0|170.0|28.0|5.0|0.0|0.0|0.0|Fish, Seafood
+74|Crab meat|85.0|90.0|14.0|2.0|0.0|0.0|1.0|Fish, Seafood
+75|Fish sticks fried|112.0|200.0|19.0|10.0|5.0|0.0|8.0|Fish, Seafood
+76|Flounder|100.0|200.0|30.0|8.0|0.0|0.0|0.0|Fish, Seafood
+77|Haddock|85.0|135.0|16.0|5.0|4.0|0.0|6.0|Fish, Seafood
+78|Halibut|100.0|182.0|26.0|8.0|0.0|0.0|0.0|Fish, Seafood
+79|Herring|100.0|211.0|22.0|13.0|0.0|0.0|0.0|Fish, Seafood
+80|Lobster|100.0|92.0|18.0|1.0|0.0|0.0|0.0|Fish, Seafood
+81|Mackerel|85.0|155.0|18.0|9.0|0.0|0.0|0.0|Fish, Seafood
+83|Oyster stew|85.0|125.0|19.0|6.0|1.0|0.0|0.0|Fish, Seafood
+84|Salmon|85.0|120.0|17.0|5.0|1.0|0.0|0.0|Fish, Seafood
+85|Sardines|85.0|180.0|22.0|9.0|4.0|0.0|0.0|Fish, Seafood
+86|Scallops|100.0|104.0|18.0|8.0|0.0|0.0|10.0|Fish, Seafood
+87|Shad|85.0|170.0|20.0|10.0|0.0|0.0|0.0|Fish, Seafood
+88|Shrimp|85.0|110.0|23.0|1.0|0.0|0.0|0.0|Fish, Seafood
+89|Swordfish|100.0|180.0|27.0|6.0|0.0|0.0|0.0|Fish, Seafood
+90|Tuna|85.0|170.0|25.0|7.0|3.0|0.0|0.0|Fish, Seafood
+91|Artichoke|100.0|44.0|2.0|0.0|0.0|2.0|10.0|Vegetables A-E
+92|Asparagus|96.0|18.0|1.0|0.0|0.0|0.5|3.0|Vegetables A-E
+93|Beans|125.0|25.0|1.0|0.0|0.0|0.8|6.0|Vegetables A-E
+94|Lima|160.0|140.0|8.0|0.0|0.0|3.0|24.0|Vegetables A-E
+95|Lima, dry, cooked|192.0|260.0|16.0|0.0|0.0|2.0|48.0|Vegetables A-E
+96|Navy, baked with pork|200.0|250.0|11.0|6.0|6.0|2.0|37.0|Vegetables A-E
+97|Red kidney|260.0|230.0|15.0|1.0|0.0|2.5|42.0|Vegetables A-E
+98|Bean sprouts|50.0|17.0|1.0|0.0|0.0|0.3|3.0|Vegetables A-E
+99|Beet greens|100.0|27.0|2.0|0.0|0.0|1.4|6.0|Vegetables A-E
+100|Beetroots|165.0|1.0|12.0|0.0|0.0|0.0|0.8|Vegetables A-E
+101|Broccoli|150.0|45.0|5.0|0.0|0.0|1.9|8.0|Vegetables A-E
+102|Brussels sprouts|130.0|60.0|6.0|0.0|0.0|1.7|12.0|Vegetables A-E
+103|Sauerkraut|150.0|32.0|1.0|0.0|0.0|1.2|7.0|Vegetables A-E
+104|Steamed cabbage|170.0|40.0|2.0|0.0|0.0|1.3|9.0|Vegetables A-E
+105|Carrots|150.0|45.0|1.0|0.0|0.0|0.9|10.0|Vegetables A-E
+106|Raw, grated|110.0|45.0|1.0|0.0|0.0|1.2|10.0|Vegetables A-E
+107|Strips, from raw|50.0|20.0|0.0|0.0|0.0|0.5|5.0|Vegetables A-E
+108|Cauliflower|120.0|30.0|3.0|0.0|0.0|1.0|6.0|Vegetables A-E
+109|Celery|100.0|20.0|1.0|0.0|0.0|1.0|4.0|Vegetables A-E
+110|Stalk raw|40.0|5.0|1.0|0.0|0.0|0.3|1.0|Vegetables A-E
+111|Chard steamed|150.0|30.0|2.0|0.0|0.0|1.4|7.0|Vegetables A-E
+112|Collards|150.0|51.0|5.0|0.0|0.0|2.0|8.0|Vegetables A-E
+113|Corn|100.0|92.0|3.0|1.0|0.0|0.8|21.0|Vegetables A-E
+114|cooked or canned|200.0|170.0|5.0|0.0|0.0|1.6|41.0|Vegetables A-E
+115|Cucumbers|50.0|6.0|0.0|0.0|0.0|0.2|1.0|Vegetables A-E
+116|Dandelion greens|180.0|80.0|5.0|1.0|0.0|3.2|16.0|Vegetables A-E
+117|Eggplant|180.0|30.0|2.0|0.0|0.0|1.0|9.0|Vegetables A-E
+118|Endive|57.0|10.0|1.0|0.0|0.0|0.6|2.0|Vegetables A-E
+119|Kale|110.0|45.0|4.0|1.0|0.0|0.9|8.0|Vegetables F-P
+120|Kohlrabi|140.0|40.0|2.0|0.0|0.0|1.5|9.0|Vegetables F-P
+121|Lambs quarters, steamed|150.0|48.0|5.0|0.0|0.0|3.2|7.0|Vegetables F-P
+122|Lentils|200.0|212.0|15.0|0.0|0.0|2.4|38.0|Vegetables F-P
+123|Lettuce|100.0|14.0|1.0|0.0|0.0|0.5|2.0|Vegetables F-P
+124|Iceberg|100.0|13.0|0.0|0.0|0.0|0.5|3.0|Vegetables F-P
+125|Mushrooms canned|120.0|12.0|2.0|0.0|0.0|0.0|4.0|Vegetables F-P
+126|Mustard greens|140.0|30.0|3.0|0.0|0.0|1.2|6.0|Vegetables F-P
+127|Okra|100.0|32.0|1.0|0.0|0.0|1.0|7.0|Vegetables F-P
+128|Onions|210.0|80.0|2.0|0.0|0.0|1.6|18.0|Vegetables F-P
+129|Raw, green|50.0|22.0|0.0|0.0|0.0|1.0|5.0|Vegetables F-P
+130|Parsley|50.0|2.0|0.0|0.0|0.0|0.0|0.0|Vegetables F-P
+131|Parsnips|155.0|95.0|2.0|1.0|0.0|3.0|22.0|Vegetables F-P
+132|Peas|100.0|66.0|3.0|0.0|0.0|0.1|13.0|Vegetables F-P
+133|Fresh, steamed peas|100.0|70.0|5.0|0.0|0.0|2.2|12.0|Vegetables R-Z
+134|Frozen peas|100.0|36.4|5.0|0.0|0.0|1.8|12.0|Vegetables R-Z
+135|Split cooked peas|100.0|115.0|8.0|0.0|0.0|0.4|21.0|Vegetables R-Z
+136|heated peas|100.0|53.0|3.0|0.0|0.0|1.0|10.0|Vegetables R-Z
+137|Peppers canned|38.0|10.0|0.0|0.0|0.0|0.0|2.0|Vegetables R-Z
+138|Peppers Raw, green, sweet|100.0|25.0|1.0|0.0|0.0|1.4|6.0|Vegetables R-Z
+139|Peppers with beef and crumbs|150.0|255.0|19.0|9.0|8.0|1.0|24.0|Vegetables R-Z
+140|Potatoes, baked|100.0|100.0|2.0|0.0|0.0|0.5|22.0|Vegetables R-Z
+141|French-fried|60.0|155.0|0.0|7.0|3.0|0.4|20.0|Vegetables R-Z
+142|Potatoes Mashed with milk and butter|200.0|230.0|4.0|12.0|11.0|0.7|28.0|Vegetables R-Z
+143|Potatoes, pan-tried|100.0|268.0|4.0|14.0|6.0|0.4|33.0|Vegetables R-Z
+144|Scalloped with cheese potatoes|100.0|145.0|6.0|8.0|7.0|0.4|14.0|Vegetables R-Z
+145|Steamed potatoes before peeling|100.0|80.0|2.0|0.0|0.0|0.4|19.0|Vegetables R-Z
+146|Potato chips|20.0|110.0|1.0|7.0|4.0|0.0|10.0|Vegetables R-Z
+147|Radishes|50.0|10.0|0.0|0.0|0.0|0.3|2.0|Vegetables R-Z
+148|Rutabagas|100.0|32.0|0.0|0.0|0.0|1.4|8.0|Vegetables R-Z
+149|Soybeans|200.0|260.0|22.0|11.0|0.0|3.2|20.0|Vegetables R-Z
+150|Spinach|100.0|26.0|3.0|0.0|0.0|1.0|3.0|Vegetables R-Z
+151|Squash|210.0|35.0|1.0|0.0|0.0|0.6|8.0|Vegetables R-Z
+152|Winter, mashed|200.0|95.0|4.0|0.0|0.0|2.6|23.0|Vegetables R-Z
+153|Sweet potatoes|110.0|155.0|2.0|1.0|0.0|1.0|36.0|Vegetables R-Z
+154|Candied|175.0|235.0|2.0|6.0|5.0|1.5|80.0|Vegetables R-Z
+155|Tomatoes|240.0|50.0|2.0|0.0|0.0|1.0|9.0|Vegetables R-Z
+156|Raw, 2 by 2 1/2|150.0|30.0|1.0|0.0|0.0|0.6|6.0|Vegetables R-Z
+157|Tomato juice|240.0|50.0|2.0|0.0|0.0|0.6|10.0|Vegetables R-Z
+158|Tomato catsup|17.0|15.0|0.0|0.0|0.0|0.0|4.0|Vegetables R-Z
+159|Turnip greens|145.0|45.0|4.0|1.0|0.0|1.8|8.0|Vegetables R-Z
+160|Turnips, steamed|155.0|40.0|1.0|0.0|0.0|1.8|9.0|Vegetables R-Z
+161|Watercress stems, raw|50.0|9.0|1.0|0.0|0.0|0.3|1.0|Fruits A-F
+162|Apple juice canned|250.0|125.0|0.0|0.0|0.0|0.0|34.0|Fruits A-F
+163|Apple vinegar|100.0|14.0|0.0|0.0|0.0|0.0|3.0|Fruits A-F
+164|Apples, raw|130.0|70.0|0.0|0.0|0.0|1.0|18.0|Fruits A-F
+165|Stewed or canned|240.0|100.0|0.0|0.0|0.0|2.0|26.0|Fruits A-F
+166|Apricots|250.0|220.0|2.0|0.0|0.0|1.0|57.0|Fruits A-F
+167|Dried, uncooked|75.0|220.0|4.0|0.0|0.0|1.0|50.0|Fruits A-F
+168|Fresh|114.0|55.0|1.0|0.0|0.0|0.7|14.0|Fruits A-F
+169|Nectar, or juice|250.0|140.0|1.0|0.0|0.0|2.0|36.0|Fruits A-F
+170|Avocado|108.0|185.0|2.0|18.0|12.0|1.8|6.0|Fruits A-F
+171|Banana|150.0|85.0|1.0|0.0|0.0|0.9|23.0|Fruits A-F
+172|Blackberries|144.0|85.0|2.0|1.0|0.0|6.6|19.0|Fruits A-F
+173|Blueberries|250.0|245.0|1.0|0.0|0.0|2.0|65.0|Fruits A-F
+174|Cantaloupe|380.0|40.0|1.0|0.0|0.0|2.2|9.0|Fruits A-F
+175|Cherries|257.0|100.0|2.0|1.0|0.0|2.0|26.0|Fruits A-F
+176|Fresh, raw|114.0|65.0|1.0|0.0|0.0|0.8|15.0|Fruits A-F
+177|Cranberry sauce sweetened|277.0|530.0|0.0|0.0|0.0|1.2|142.0|Fruits A-F
+178|Dates|178.0|505.0|4.0|0.0|0.0|3.6|134.0|Fruits A-F
+179|Figs|42.0|120.0|2.0|0.0|0.0|1.9|30.0|Fruits A-F
+180|Fresh, raw figs|114.0|90.0|2.0|0.0|0.0|1.0|22.0|Fruits A-F
+181|figs Canned with syrup |115.0|130.0|1.0|0.0|0.0|1.0|32.0|Fruits A-F
+182|Fruit cocktail, canned|256.0|195.0|1.0|0.0|0.0|0.5|50.0|Fruits A-F
+183|Grapefruit sections|250.0|170.0|1.0|0.0|0.0|0.5|44.0|Fruits G-P
+184|"Grapefruit, fresh, 5"" diameter"|285.0|50.0|1.0|0.0|0.0|1.0|14.0|Fruits G-P
+185|Grapefruit juice|250.0|100.0|1.0|0.0|0.0|1.0|24.0|Fruits G-P
+186|Grapes|153.0|70.0|1.0|0.0|0.0|0.8|16.0|Fruits G-P
+187|European, as Muscat, Tokay|160.0|100.0|1.0|0.0|0.0|0.7|26.0|Fruits G-P
+188|Grape juice|250.0|160.0|1.0|0.0|0.0|0.0|42.0|Fruits G-P
+189|Lemon juice|125.0|30.0|0.0|0.0|0.0|0.0|10.0|Fruits G-P
+190|Lemonade concentratefrozen|220.0|430.0|0.0|0.0|0.0|0.0|112.0|Fruits G-P
+191|Limeade concentrate frozen|218.0|405.0|0.0|0.0|0.0|0.0|108.0|Fruits G-P
+192|Olives large|65.0|72.0|1.0|10.0|9.0|0.8|3.0|Fruits G-P
+193|OlivesRipe|65.0|105.0|1.0|13.0|12.0|1.0|1.0|Fruits G-P
+194|"Oranges 3"" diameter"|180.0|60.0|2.0|0.0|0.0|1.0|16.0|Fruits G-P
+195|Orange juice|250.0|112.0|2.0|0.0|0.0|0.2|25.0|Fruits G-P
+196|Frozen |210.0|330.0|2.0|0.0|0.0|0.4|78.0|Fruits G-P
+197|Papaya|200.0|75.0|1.0|0.0|0.0|1.8|18.0|Fruits G-P
+198|Peaches|257.0|200.0|1.0|0.0|0.0|1.0|52.0|Fruits G-P
+199|Fresh, raw|114.0|35.0|1.0|0.0|0.0|0.6|10.0|Fruits G-P
+200|Pears|255.0|195.0|1.0|0.0|0.0|2.0|50.0|Fruits G-P
+201|Raw, 3 by 2V|182.0|100.0|1.0|1.0|0.0|2.0|25.0|Fruits G-P
+202|Persimmons|125.0|75.0|1.0|0.0|0.0|2.0|20.0|Fruits G-P
+203|Pineapple|122.0|95.0|0.0|0.0|0.0|0.4|26.0|Fruits G-P
+204|Pineapple Crushed|260.0|205.0|1.0|0.0|0.0|0.7|55.0|Fruits G-P
+206|Pineapple juice|250.0|120.0|1.0|0.0|0.0|0.2|32.0|Fruits G-P
+207|Plums|256.0|185.0|1.0|0.0|0.0|0.7|50.0|Fruits G-P
+208|"Raw, 2"" diameter"|60.0|30.0|0.0|0.0|0.0|0.2|7.0|Fruits G-P
+209|Prunes|270.0|300.0|3.0|1.0|0.0|0.8|81.0|Fruits G-P
+210|Prune juice|240.0|170.0|1.0|0.0|0.0|0.7|45.0|Fruits G-P
+211|Raisins|88.0|230.0|2.0|0.0|0.0|0.7|82.0|Fruits R-Z
+212|Raspberries|100.0|100.0|0.0|0.0|0.0|2.0|25.0|Fruits R-Z
+213|Raw, red|100.0|57.0|0.0|0.0|0.0|5.0|14.0|Fruits R-Z
+214|Rhubarb sweetened|270.0|385.0|1.0|0.0|0.0|1.9|98.0|Fruits R-Z
+215|Strawberries|227.0|242.0|1.0|0.0|0.0|1.3|60.0|Fruits R-Z
+216|Raw|149.0|54.0|0.0|0.0|0.0|1.9|12.0|Fruits R-Z
+217|Tangerines|114.0|40.0|1.0|0.0|0.0|1.0|10.0|Fruits R-Z
+218|Watermelon|925.0|120.0|2.0|1.0|0.0|3.6|29.0|Fruits R-Z
+219|Biscuits|38.0|130.0|3.0|4.0|3.0|0.0|18.0|Breads, cereals, fastfood,grains
+220|Bran flakes|25.0|117.0|3.0|0.0|0.0|0.1|32.0|Breads, cereals, fastfood,grains
+221|Bread, cracked wheat|23.0|60.0|2.0|1.0|1.0|0.1|12.0|Breads, cereals, fastfood,grains
+222|Rye|23.0|55.0|2.0|1.0|1.0|0.1|12.0|Breads, cereals, fastfood,grains
+223|White, 20 slices, or|454.0|1.225|39.0|15.0|12.0|9.0|229.0|Breads, cereals, fastfood,grains
+224|Whole-wheat|454.0|1.1|48.0|14.0|10.0|67.5|216.0|Breads, cereals, fastfood,grains
+225|Whole-wheat|23.0|55.0|2.0|1.0|0.0|0.31|11.0|Breads, cereals, fastfood,grains
+226|Corn bread ground meal|50.0|100.0|3.0|4.0|2.0|0.3|15.0|Breads, cereals, fastfood,grains
+227|Cornflakes|25.0|110.0|2.0|0.0|0.0|0.1|25.0|Breads, cereals, fastfood,grains
+228|Corn grits cooked|242.0|120.0|8.0|0.0|0.0|0.2|27.0|Breads, cereals, fastfood,grains
+229|Corn meal|118.0|360.0|9.0|4.0|2.0|1.6|74.0|Breads, cereals, fastfood,grains
+230|Crackers|14.0|55.0|1.0|1.0|0.0|0.0|10.0|Breads, cereals, fastfood,grains
+231|Soda, 2 1/2 square|11.0|45.0|1.0|1.0|0.0|0.0|8.0|Breads, cereals, fastfood,grains
+232|Farina|238.0|105.0|3.0|0.0|0.0|8.0|22.0|Breads, cereals, fastfood,grains
+233|Flour|110.0|460.0|39.0|22.0|0.0|2.9|33.0|Breads, cereals, fastfood,grains
+234|Wheat (all purpose)|110.0|400.0|12.0|1.0|0.0|0.3|84.0|Breads, cereals, fastfood,grains
+235|Wheat (whole)|120.0|390.0|13.0|2.0|0.0|2.8|79.0|Breads, cereals, fastfood,grains
+236|Macaroni|140.0|155.0|5.0|1.0|0.0|0.1|32.0|Breads, cereals, fastfood,grains
+237|Baked with cheese|220.0|475.0|18.0|25.0|24.0|0.0|44.0|Breads, cereals, fastfood,grains
+238|Muffins|48.0|135.0|4.0|5.0|4.0|0.0|19.0|Breads, cereals, fastfood,grains
+239|Noodles|160.0|200.0|7.0|2.0|2.0|0.1|37.0|Breads, cereals, fastfood,grains
+240|Oatmeal|236.0|150.0|5.0|3.0|2.0|4.6|26.0|Breads, cereals, fastfood,grains
+241|"Pancakes 4"" diam."|108.0|250.0|7.0|9.0|0.0|0.1|28.0|Breads, cereals, fastfood,grains
+242|"Wheat, pancakes 4"" diam."|108.0|250.0|7.0|9.0|0.0|0.1|28.0|Breads, cereals, fastfood,grains
+243|"Pizza 14"" diam."|75.0|180.0|8.0|6.0|5.0|0.0|23.0|Breads, cereals, fastfood,grains
+244|Popcorn salted|28.0|152.0|3.0|7.0|2.0|0.5|20.0|Breads, cereals, fastfood,grains
+245|Puffed rice|14.0|55.0|0.0|0.0|0.0|0.0|12.0|Breads, cereals, fastfood,grains
+246|Puffed wheat presweetened|28.0|105.0|1.0|0.0|0.0|0.6|26.0|Breads, cereals, fastfood,grains
+247|Rice|208.0|748.0|15.0|3.0|0.0|1.2|154.0|Breads, cereals, fastfood,grains
+248|Converted|187.0|677.0|14.0|0.0|0.0|0.4|142.0|Breads, cereals, fastfood,grains
+249|White|191.0|692.0|14.0|0.0|0.0|0.3|150.0|Breads, cereals, fastfood,grains
+250|Rice flakes|30.0|115.0|2.0|0.0|0.0|0.1|26.0|Breads, cereals, fastfood,grains
+251|Rice polish|50.0|132.0|6.0|6.0|0.0|1.2|28.0|Breads, cereals, fastfood,grains
+252|Rolls|50.0|411.0|3.0|12.0|11.0|0.1|23.0|Breads, cereals, fastfood,grains
+253|of refined flour|38.0|115.0|3.0|2.0|2.0|0.0|20.0|Breads, cereals, fastfood,grains
+254|whole-wheat|40.0|102.0|4.0|1.0|0.0|0.1|20.0|Breads, cereals, fastfood,grains
+255|Spaghetti with meat sauce|250.0|285.0|13.0|10.0|6.0|0.5|35.0|Breads, cereals, fastfood,grains
+256|with tomatoes and cheese|250.0|210.0|6.0|5.0|3.0|0.5|36.0|Breads, cereals, fastfood,grains
+257|Spanish rice|250.0|217.0|4.0|4.0|0.0|1.2|40.0|Breads, cereals, fastfood,grains
+258|Shredded wheat biscuit|28.0|100.0|3.0|1.0|0.0|0.7|23.0|Breads, cereals, fastfood,grains
+259|Waffles|75.0|240.0|8.0|9.0|1.0|0.1|30.0|Breads, cereals, fastfood,grains
+260|Wheat germ|68.0|245.0|17.0|7.0|3.0|2.5|34.0|Breads, cereals, fastfood,grains
+261|Wheat-germ cereal toasted|65.0|260.0|20.0|7.0|3.0|2.5|36.0|Breads, cereals, fastfood,grains
+262|Wheat meal cereal unrefined|30.0|103.0|4.0|1.0|0.0|0.7|25.0|Breads, cereals, fastfood,grains
+263|Wheat, cooked|200.0|275.0|12.0|1.0|0.0|4.4|35.0|Breads, cereals, fastfood,grains
+264|Bean soups|250.0|190.0|8.0|5.0|4.0|0.6|30.0|Soups
+265|Beef soup|250.0|100.0|6.0|4.0|4.0|0.5|11.0|Soups
+266|Bouillon|240.0|24.0|5.0|0.0|0.0|0.0|0.0|Soups
+267|chicken soup|250.0|75.0|4.0|2.0|2.0|0.0|10.0|Soups
+268|Clam chowder|255.0|85.0|5.0|2.0|8.0|0.5|12.0|Soups
+269|Cream soups|255.0|200.0|7.0|12.0|11.0|1.2|18.0|Soups
+270|Noodle|250.0|115.0|6.0|4.0|3.0|0.2|13.0|Soups
+271|Split-pea soup|250.0|147.0|8.0|3.0|3.0|0.5|25.0|Soups
+272|Tomato soup|245.0|175.0|6.0|7.0|6.0|0.5|22.0|Soups
+273|Vegetable|250.0|80.0|4.0|2.0|2.0|0.0|14.0|Soups
+274|Apple betty|100.0|150.0|1.0|4.0|0.0|0.5|29.0|Desserts, sweets
+275|Bread pudding|200.0|374.0|11.0|12.0|11.0|0.2|56.0|Desserts, sweets
+276|Cakes|40.0|110.0|3.0|0.0|0.0|0.0|23.0|Desserts, sweets
+277|Chocolate fudge|120.0|420.0|5.0|14.0|12.0|0.3|70.0|Desserts, sweets
+278|Cupcake|50.0|160.0|3.0|3.0|2.0|0.0|31.0|Desserts, sweets
+279|Fruit cake|30.0|105.0|2.0|4.0|3.0|0.2|17.0|Desserts, sweets
+280|Gingerbread|55.0|180.0|2.0|7.0|6.0|0.0|28.0|Desserts, sweets
+281|Plain, with no icing|55.0|180.0|4.0|5.0|4.0|0.0|31.0|Desserts, sweets
+282|Sponge cake|40.0|115.0|3.0|2.0|2.0|0.0|22.0|Desserts, sweets
+283|Candy|25.0|104.0|0.0|3.0|3.0|0.0|19.0|Desserts, sweets
+284|Chocolate creams|30.0|130.0|0.0|4.0|4.0|0.0|24.0|Desserts, sweets
+285|Fudge|90.0|370.0|0.0|12.0|11.0|0.1|80.0|Desserts, sweets
+286|Hard candies|28.0|90.0|0.0|0.0|0.0|0.0|28.0|Desserts, sweets
+287|Marshmallows|30.0|98.0|1.0|0.0|0.0|0.0|23.0|Desserts, sweets
+288|Milk chocolate|56.0|290.0|2.0|6.0|6.0|0.2|44.0|Desserts, sweets
+289|Chocolate syrup|40.0|80.0|0.0|0.0|0.0|0.0|22.0|Desserts, sweets
+290|Doughnuts|33.0|135.0|2.0|7.0|4.0|0.0|17.0|Desserts, sweets
+291|Gelatin, made with water|239.0|155.0|4.0|0.0|0.0|0.0|36.0|Desserts, sweets
+292|Honey|42.0|120.0|0.0|0.0|0.0|0.0|30.0|Jams, Jellies
+293|Ice cream|300.0|250.0|0.0|0.0|12.0|10.0|0.0|Desserts, sweets
+294|Ices|150.0|117.0|0.0|0.0|0.0|0.0|48.0|Desserts, sweets
+295|preserves|20.0|55.0|0.0|0.0|0.0|0.0|14.0|Jams, Jellies
+296|Jellies|20.0|50.0|0.0|0.0|0.0|0.0|13.0|Jams, Jellies
+297|Molasses|20.0|45.0|0.0|0.0|0.0|8.0|11.0|Jams, Jellies
+298|Cane Syrup|20.0|50.0|0.0|0.0|0.0|0.0|13.0|Jams, Jellies
+299|"9"" diam. pie"|135.0|330.0|3.0|13.0|11.0|0.1|53.0|Desserts, sweets
+300|Cherry Pie|135.0|340.0|3.0|13.0|11.0|0.1|55.0|Desserts, sweets
+301|Custard|130.0|265.0|7.0|11.0|10.0|0.0|34.0|Desserts, sweets
+302|Lemon meringue|120.0|300.0|4.0|12.0|10.0|0.1|45.0|Desserts, sweets
+303|Mince|135.0|340.0|3.0|9.0|8.0|0.7|62.0|Desserts, sweets
+304|Pumpkin Pie|130.0|265.0|5.0|12.0|11.0|8.0|34.0|Desserts, sweets
+305|Puddings Sugar|200.0|770.0|0.0|0.0|0.0|0.0|199.0|Desserts, sweets
+306|3 teaspoons sugar|12.0|50.0|0.0|0.0|0.0|0.0|12.0|Desserts, sweets
+307|Brown, firm-packed, dark sugar|220.0|815.0|0.0|0.0|0.0|0.0|210.0|Jams, Jellies
+308|Syrup|40.0|100.0|0.0|0.0|0.0|0.0|25.0|Jams, Jellies
+309|table blends sugar|40.0|110.0|0.0|0.0|0.0|0.0|29.0|Jams, Jellies
+310|Tapioca cream pudding|250.0|335.0|10.0|10.0|9.0|0.0|42.0|Desserts, sweets
+311|Almonds|70.0|425.0|13.0|38.0|28.0|1.8|13.0|Seeds and Nuts
+312|roasted and salted|70.0|439.0|13.0|40.0|31.0|1.8|13.0|Seeds and Nuts
+313|Brazil nuts|70.0|457.0|10.0|47.0|31.0|2.0|7.0|Seeds and Nuts
+314|Cashews|70.0|392.0|12.0|32.0|28.0|0.9|20.0|Seeds and Nuts
+315|coconut sweetened|50.0|274.0|1.0|20.0|19.0|2.0|26.0|Seeds and Nuts
+316|Peanut butter|50.0|300.0|12.0|25.0|17.0|0.9|9.0|Seeds and Nuts
+317|Peanut butter, natural|50.0|284.0|13.0|24.0|10.0|0.9|8.0|Seeds and Nuts
+318|Peanuts|50.0|290.0|13.0|25.0|16.0|1.2|9.0|Seeds and Nuts
+319|Pecans|52.0|343.0|5.0|35.0|25.0|1.1|7.0|Seeds and Nuts
+320|Sesame seeds|50.0|280.0|9.0|24.0|13.0|3.1|10.0|Seeds and Nuts
+321|Sunflower seeds|50.0|280.0|12.0|26.0|7.0|1.9|10.0|Seeds and Nuts
+322|Walnuts|50.0|325.0|7.0|32.0|7.0|1.0|8.0|Seeds and Nuts
+323|Beer|480.0|228.0|0.0|0.0|0.0|0.0|8.0|Drinks,Alcohol, Beverages
+324|Gin|28.0|70.0|0.0|0.0|0.0|0.0|0.0|Drinks,Alcohol, Beverages
+325|Wines|120.0|164.0|0.0|0.0|0.0|0.0|9.0|Drinks,Alcohol, Beverages
+326|Table (12.2% alcohol)|120.0|100.0|0.0|0.0|0.0|0.0|5.0|Drinks,Alcohol, Beverages
+327|Carbonated drinks Artificially sweetened|346.0|0.0|0.0|0.0|0.0|0.0|0.0|Drinks,Alcohol, Beverages
+328|Club soda|346.0|0.0|0.0|0.0|0.0|0.0|0.0|Drinks,Alcohol, Beverages
+329|Cola drinks|346.0|137.0|0.0|0.0|0.0|0.0|38.0|Drinks,Alcohol, Beverages
+330|Fruit-flavored soda|346.0|161.0|0.0|0.0|0.0|0.0|42.0|Drinks,Alcohol, Beverages
+331|Ginger ale|346.0|105.0|0.0|0.0|0.0|0.0|28.0|Drinks,Alcohol, Beverages
+332|Root beer|346.0|140.0|0.0|0.0|0.0|0.0|35.0|Drinks,Alcohol, Beverages
+333|Coffee|230.0|3.0|0.0|0.0|0.0|0.0|1.0|Drinks,Alcohol, Beverages
+334|Tea|230.0|4.0|0.0|0.0|0.0|0.0|1.0|Drinks,Alcohol, Beverages

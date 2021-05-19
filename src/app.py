@@ -4,7 +4,7 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-@st.cache
+
 def carrega_dados(caminho):
     dados_nutricao = pd.read_excel(caminho)
     return dados_nutricao
@@ -28,7 +28,8 @@ def gera_tabela(df, label):
         df['  '] =  " "
         df.rename({'produto':label,'na_terra': '   ', 'na_cesta':' '}, axis='columns', inplace=True)
         st.table(df[[label, '   ', '  ',' ']])
-
+        
+        
 def main():
     
     caminho_base_nutricao = "data/informacao_nutricional.xls"

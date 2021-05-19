@@ -4,7 +4,7 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-
+@st.cache
 def carrega_dados(caminho):
     dados_nutricao = pd.read_excel(caminho)
     return dados_nutricao

@@ -6,13 +6,12 @@ import matplotlib.pyplot as plt
 
 
 def carrega_dados(caminho):
-    dados_nutricao = pd.read_csv(caminho, decimal=",")
-    dados_nutricao = dados_nutricao.replace('t', 0)
+    dados_nutricao = pd.read_excel(caminho)
     return dados_nutricao
 
 
 def grafico_comparativo(dados_nutricao, lista_alimentos, atributo):
-    df = dados_nutricao.set_index('Food')
+    df = dados_nutricao.set_index('Alimento')
     df = df.loc[lista_alimentos]
     #plt.figure(figsize = (8,6))
     
@@ -22,69 +21,62 @@ def grafico_comparativo(dados_nutricao, lista_alimentos, atributo):
     
     return figura
 
+def gera_tabela(df, label):
+        df.index = [" "] * len(df)
+        df['na_terra'] = " "
+        df['na_cesta'] = " "
+        df['  '] =  " "
+        df.rename({'produto':label,'na_terra': '   ', 'na_cesta':' '}, axis='columns', inplace=True)
+        st.table(df[[label, '   ', '  ',' ']])
+
 def main():
     
-    caminho = "data/nutrients_csvfile.csv"
-    dados_nutricao = carrega_dados(caminho)
-    dados_nutricao = tratamento_dados(dados_nutricao)
+    caminho_base_nutricao = "data/informacao_nutricional.xls"
     
-    info_nutricional = dados_nutricao.columns[2:-1]
+    # por enquanto, não vou usar o google drive
+    #url_dados_csa = ' https://drive.google.com/file/d/1ZYFIPGIbQ52g1lKYHGhIGIBhT9ZMzB71/view?usp=sharing'
+    #caminho_dados_csa = 'https://drive.google.com/uc?export=download&id='+url_dados_csa.split('/')[-2]
+    #dados_csa = pd.read_excel(caminho_dados_csa, engine='openpyxl')
+    caminho_dados_csa = "data/csa_pindorama.xlsx"
+    
+    dados_csa = carrega_dados(caminho_dados_csa)
+    dados_nutricao = carrega_dados(caminho_base_nutricao)
+    
+    info_nutricional = dados_nutricao.columns[2:]
+    info_alimento = dados_nutricao["Alimento"].values 
     
     st.title("CSA Pindorama")
-    st.markdown("Aplicação da **CSA Pindorama** :seedling:")
-    opcao_info_nutricional = st.selectbox("Escolha a informação nutricional",
-            info_nutricional)
+
+    st.image("src/logo.jpg", use_column_width=True)
     
-    #st.dataframe(dados_nutricao)
-    figura = grafico_comparativo(dados_nutricao,["Milk skim", "Fortified milk", "Ice cream"], opcao_info_nutricional)
-    st.pyplot(figura)
+    st.markdown("Aplicativo da **CSA Pindorama** :seedling:")
     
     if st.checkbox("Na terra", value=False):
-        st.write("mostrando o que tem na terra no momento")
+        st.image("src/na_terra.jpg",use_column_width=True)
+
+            
+        na_terra = dados_csa.query("na_terra == 'x'")
+        gera_tabela(na_terra, '--produtos em cultivo--')
         
-    if st.checkbox("Na cesta em 22/05 ",value=False):
-        st.write("mostrando os prováveis produtos da cesta")
+    #no futuro, pegar a data no próprio df    
+    data = "22/05"
+    if st.checkbox(f"Na cesta em {data}",value=False):
+        st.image("src/na_cesta.jpg",use_column_width=True)
+        na_cesta = dados_csa.query("na_cesta == 'x'")
+        gera_tabela(na_cesta, f'--produtos na cesta em {data}--')
+        
 
-def tratamento_dados(dados_nutricao):    
-    dados_nutricao["Protein"] = dados_nutricao["Protein"].replace("-1","0", regex=True)
-    dados_nutricao["Protein"] = dados_nutricao["Protein"].astype(float)
-
-    # dropar linhas erradas
-    dados_nutricao.drop(205, inplace=True)
-    dados_nutricao.drop(82, inplace=True)
-
-    # coluna calorias (Calories)
-    dados_nutricao["Calories"] = dados_nutricao["Calories"].str.replace(",",".",regex=True)
-    # corrigindo as calorias das ervilhas
-    dados_nutricao.loc[134, "Calories"] = '36.4'
-    # considerando o máximo da faixa de calories das alcachofras
-    dados_nutricao.loc[91, "Calories"] = '44'
-    dados_nutricao["Calories"] = dados_nutricao["Calories"].astype(float)
-
-    #coluna gordura (Fat)
-    dados_nutricao["Fat"] = dados_nutricao["Fat"].astype(float)
-
-    # coluna gordura saturada (Sat.Fat)
-    # corrigindo a gordura saturada da carne de porco
-    dados_nutricao.loc[42, "Sat.Fat"] = '18.6'
-    # corrigindo a gordura saturada da beterraba
-    dados_nutricao.loc[100, "Sat.Fat"] = '0'
-    dados_nutricao["Sat.Fat"] = dados_nutricao["Sat.Fat"].astype(float)
-
-    # coluna fibra (Fiber)
-    # corrigindo o valor da fibra do peixe "cavalinha" 
-    dados_nutricao.loc[81, "Fiber"] = '0'
-    dados_nutricao["Fiber"] = dados_nutricao["Fiber"].astype(float)
-
-    #coluna carboidrato (Carbs)
-    dados_nutricao["Carbs"] = dados_nutricao["Carbs"].astype(float)
-
-    # dropar coluna "Measure" (a coluna gramas permite uma comparação melhor)
-    dados_nutricao.drop("Measure", axis = 1, inplace=True)
+    st.write("-------------------------------------------")
+    st.write("Informação nutricional dos alimentos da CSA.       \n           Obs.: em construção - aberto a sugestões!")
+    opcao_info_nutricional = st.selectbox("Escolha a informação nutricional",info_nutricional)
     
-    return dados_nutricao
+    opcao_alimento_1 = st.selectbox("Escolha um alimento",info_alimento, index = 2)
+    opcao_alimento_2 = st.selectbox(" Escolha um alimento",info_alimento, index = 18)
     
     
+    
+    figura = grafico_comparativo(dados_nutricao,[ opcao_alimento_1, opcao_alimento_2], opcao_info_nutricional)
+    st.pyplot(figura)
     
 if __name__ == "__main__":
     main()

@@ -27,13 +27,23 @@ def main():
     caminho = "data/nutrients_csvfile.csv"
     dados_nutricao = carrega_dados(caminho)
     dados_nutricao = tratamento_dados(dados_nutricao)
-    figura = grafico_comparativo(dados_nutricao,["Milk skim", "Fortified milk", "Ice cream"], "Protein")
+    
+    info_nutricional = dados_nutricao.columns[2:-1]
     
     st.title("CSA Pindorama")
     st.markdown("Aplicação da **CSA Pindorama** :seedling:")
+    opcao_info_nutricional = st.selectbox("Escolha a informação nutricional",
+            info_nutricional)
+    
     #st.dataframe(dados_nutricao)
+    figura = grafico_comparativo(dados_nutricao,["Milk skim", "Fortified milk", "Ice cream"], opcao_info_nutricional)
     st.pyplot(figura)
     
+    if st.checkbox("Na terra", value=False):
+        st.write("mostrando o que tem na terra no momento")
+        
+    if st.checkbox("Na cesta em 22/05 ",value=False):
+        st.write("mostrando os prováveis produtos da cesta")
 
 def tratamento_dados(dados_nutricao):    
     dados_nutricao["Protein"] = dados_nutricao["Protein"].replace("-1","0", regex=True)

@@ -4,6 +4,7 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+st.set_page_config(page_title= "CSA Pindorama", page_icon=':seedling:')
 
 def carrega_dados(caminho, aba):
     dados_nutricao = pd.read_excel(caminho, sheet_name = aba)
@@ -41,6 +42,7 @@ def main():
     dados_csa = carrega_dados(caminho_dados_csa, 'produtos') 
     
     st.title("CSA Pindorama :seedling:")
+    #st.subheader("Da cultura do preço para a cultura do apreço")
 
     st.image("src/logo.jpg", use_column_width=True)
     

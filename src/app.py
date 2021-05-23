@@ -5,8 +5,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 
-def carrega_dados(caminho):
-    dados_nutricao = pd.read_excel(caminho)
+def carrega_dados(caminho, aba):
+    dados_nutricao = pd.read_excel(caminho, sheet_name = aba)
     return dados_nutricao
 
 
@@ -32,25 +32,19 @@ def gera_tabela(df, label):
         
 def main():
     
-    caminho_base_nutricao = "data/informacao_nutricional.xls"
-    
     # por enquanto, não vou usar o google drive
     #url_dados_csa = ' https://drive.google.com/file/d/1ZYFIPGIbQ52g1lKYHGhIGIBhT9ZMzB71/view?usp=sharing'
     #caminho_dados_csa = 'https://drive.google.com/uc?export=download&id='+url_dados_csa.split('/')[-2]
     #dados_csa = pd.read_excel(caminho_dados_csa, engine='openpyxl')
     caminho_dados_csa = "data/csa_pindorama.xlsx"
     
-    dados_csa = carrega_dados(caminho_dados_csa)
-    dados_nutricao = carrega_dados(caminho_base_nutricao)
+    dados_csa = carrega_dados(caminho_dados_csa, 'produtos') 
     
-    info_nutricional = dados_nutricao.columns[2:]
-    info_alimento = dados_nutricao["Alimento"].values 
-    
-    st.title("CSA Pindorama")
+    st.title("CSA Pindorama :seedling:")
 
     st.image("src/logo.jpg", use_column_width=True)
     
-    st.markdown("Aplicativo da **CSA Pindorama** :seedling:")
+    st.markdown("**Aplicativo da CSA Pindorama** :sunrise:")
     
     if st.checkbox("Na terra", value=False):
         st.image("src/na_terra.jpg",use_column_width=True)
@@ -60,24 +54,53 @@ def main():
         gera_tabela(na_terra, '--produtos em cultivo--')
         
     #no futuro, pegar a data no próprio df    
-    data = "22/05"
+    
+    data = "29/mai"
     if st.checkbox(f"Na cesta em {data}",value=False):
         st.image("src/na_cesta.jpg",use_column_width=True)
         na_cesta = dados_csa.query("na_cesta == 'x'")
-        gera_tabela(na_cesta, f'--produtos na cesta em {data}--')
+        gera_tabela(na_cesta, f'--provável cesta em {data} (sujeito à adições)--')
         
 
     st.write("-------------------------------------------")
-    st.write("Informação nutricional dos alimentos da CSA.       \n           Obs.: em construção - aberto a sugestões!")
-    opcao_info_nutricional = st.selectbox("Escolha a informação nutricional",info_nutricional)
     
-    opcao_alimento_1 = st.selectbox("Escolha um alimento",info_alimento, index = 2)
-    opcao_alimento_2 = st.selectbox(" Escolha um alimento",info_alimento, index = 18)
+    st.markdown("**Agenda:** :book: :herb:")
+    if st.checkbox("Busca cesta", value=False):
+        dados_busca_cesta = carrega_dados(caminho_dados_csa, 'busca_cesta')
+        dados_busca_cesta.index = ["carro_1", "carro_2"]
+        st.table(dados_busca_cesta)
+    
+    if st.checkbox("Mutirões", value=False):
+        dados_mutiroes = carrega_dados(caminho_dados_csa, 'mutiroes')
+        dados_mutiroes.index = ["objetivo", "presença_confirmada"]
+        st.table(dados_mutiroes)
     
     
+    st.write("-------------------------------------------")
     
-    figura = grafico_comparativo(dados_nutricao,[ opcao_alimento_1, opcao_alimento_2], opcao_info_nutricional)
-    st.pyplot(figura)
+    st.markdown("**Extra:** :books: :telephone:")
+    if st.checkbox("Informações nutricionais dos alimentos da CSA (em construção)", value=False):
+        dados_nutricao = carrega_dados(caminho_dados_csa, 'info_nutricional')
+        info_alimento = dados_nutricao["Alimento"].values
+        info_nutricional = dados_nutricao.columns[2:]
+
+        opcao_info_nutricional = st.selectbox("informação nutricional",info_nutricional)
+
+        opcao_alimento_1 = st.selectbox("alimento",info_alimento, index = 1)
+        opcao_alimento_2 = st.selectbox("  alimento",info_alimento, index = 3)
+        opcao_alimento_3 = st.selectbox("  alimento ",info_alimento, index = 5)
+        opcao_alimento_4 = st.selectbox("   alimento",info_alimento, index = 13)
+        
+
+        figura = grafico_comparativo(dados_nutricao,[opcao_alimento_1, 
+                                                     opcao_alimento_2,
+                                                     opcao_alimento_3, 
+                                                     opcao_alimento_4], opcao_info_nutricional)
+        st.pyplot(figura)
+        
+    if st.checkbox("Contatos", value=False):
+        st.markdown("[Instagram](https://www.instagram.com/csa_pindorama/) :sunflower:")
+        st.markdown("[Facebook](https://www.facebook.com/stnossasenhora/) :hibiscus:")
     
 if __name__ == "__main__":
     main()

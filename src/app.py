@@ -6,19 +6,31 @@ import matplotlib.pyplot as plt
 
 st.set_page_config(page_title= "CSA Pindorama", page_icon=':seedling:')
 
+@st.cache(allow_output_mutation=True)
 def carrega_dados(caminho, aba):
     dados_nutricao = pd.read_excel(caminho, sheet_name = aba)
     return dados_nutricao
 
 
 def grafico_comparativo(dados_nutricao, lista_alimentos, atributo):
-    df = dados_nutricao.set_index('Alimento')
+    df = dados_nutricao.set_index('alimento')
     df = df.loc[lista_alimentos]
     #plt.figure(figsize = (8,6))
     
     figura, ax = plt.subplots()
     ax = sns.barplot(data = df, x = df.index, y = atributo)
-    ax.set_title(f"Comparação de {atributo}")
+    ax.set_title(f"{atributo} por 100g de alimento")
+    ax.set(xlabel=None)
+    
+    max = 0
+    for p in ax.patches:
+        ax.annotate("%.2f" % p.get_height(), (p.get_x() + p.get_width() / 2., p.get_height()),
+                    ha='center', va='center', fontsize=11, color='gray', xytext=(0, 10),
+                    textcoords='offset points')
+        
+        if p.get_height() > max:
+            max = p.get_height()
+    _ = ax.set_ylim(0,max + 0.2*max) #To make space for the annotations
     
     return figura
 
@@ -38,6 +50,7 @@ def main():
     #caminho_dados_csa = 'https://drive.google.com/uc?export=download&id='+url_dados_csa.split('/')[-2]
     #dados_csa = pd.read_excel(caminho_dados_csa, engine='openpyxl')
     caminho_dados_csa = "data/csa_pindorama.xlsx"
+    
     
     dados_csa = carrega_dados(caminho_dados_csa, 'produtos') 
     
@@ -66,7 +79,7 @@ def main():
 
     st.write("-------------------------------------------")
     
-    st.markdown("**Agenda:** :book: :herb:")
+    st.markdown("**Agenda:** :car: :herb:")
     if st.checkbox("Busca cesta", value=False):
         dados_busca_cesta = carrega_dados(caminho_dados_csa, 'busca_cesta')
         dados_busca_cesta.index = ["carro_1", "carro_2"]
@@ -83,22 +96,23 @@ def main():
     st.markdown("**Extra:** :books: :telephone:")
     if st.checkbox("Informações nutricionais dos alimentos da CSA (em construção)", value=False):
         dados_nutricao = carrega_dados(caminho_dados_csa, 'info_nutricional')
-        info_alimento = dados_nutricao["Alimento"].values
-        info_nutricional = dados_nutricao.columns[2:]
+        info_alimento = dados_nutricao["alimento"].values
+        info_nutricional = dados_nutricao.columns[1:]
 
-        opcao_info_nutricional = st.selectbox("informação nutricional",info_nutricional)
-
-        opcao_alimento_1 = st.selectbox("alimento",info_alimento, index = 1)
-        opcao_alimento_2 = st.selectbox("  alimento",info_alimento, index = 3)
-        opcao_alimento_3 = st.selectbox("  alimento ",info_alimento, index = 5)
-        opcao_alimento_4 = st.selectbox("   alimento",info_alimento, index = 13)
+        opcao_info_nutricional = st.radio("informação nutricional (a cada 100g de alimento):",info_nutricional)
         
-
+        opcao_alimento_1 = st.selectbox("alimento:",info_alimento, index = 0)
+        opcao_alimento_2 = st.selectbox("  alimento:",info_alimento, index = 3)
+        opcao_alimento_3 = st.selectbox("  alimento: ",info_alimento, index = 6)
+        opcao_alimento_4 = st.selectbox("   alimento:",info_alimento, index = 10)
+        
         figura = grafico_comparativo(dados_nutricao,[opcao_alimento_1, 
                                                      opcao_alimento_2,
                                                      opcao_alimento_3, 
                                                      opcao_alimento_4], opcao_info_nutricional)
+        
         st.pyplot(figura)
+        st.markdown("Fonte principal dos dados: [Escola Paulista de Medicina](http://tabnut.dis.epm.br/) :school:")
         
     if st.checkbox("Contatos", value=False):
         st.markdown("[Instagram](https://www.instagram.com/csa_pindorama/) :sunflower:")

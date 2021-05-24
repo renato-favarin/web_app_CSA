@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 st.set_page_config(page_title= "CSA Pindorama", page_icon=':seedling:')
 
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 def carrega_dados(caminho, aba):
     dados_nutricao = pd.read_excel(caminho, sheet_name = aba)
     return dados_nutricao

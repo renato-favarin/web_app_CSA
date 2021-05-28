@@ -78,7 +78,7 @@ def main():
 
     st.write("-------------------------------------------")
     
-    st.markdown("**Agenda:** :car: :herb:")
+    st.markdown("**Agenda e avisos:** :car: :herb: :newspaper:")
     if st.checkbox("Busca cesta", value=False):
         dados_busca_cesta = carrega_dados(caminho_dados_csa, 'busca_cesta', ignora_primeira_linha_coluna = True)
         st.table(dados_busca_cesta)
@@ -87,7 +87,19 @@ def main():
         
         dados_mutiroes = carrega_dados(caminho_dados_csa, 'mutiroes', ignora_primeira_linha_coluna = True)
         st.table(dados_mutiroes)
-        st.markdown("**Atenção:** uso obrigatório de máscara e álcool gel/70% durante todo o mutirão.")
+        st.markdown("**Atenção:** uso obrigatório de máscara e álcool gel/70% durante todo o mutirão. :mask: ")
+        
+    if st.checkbox("Avisos", value=False):
+        st.markdown("**:heavy_check_mark:** <font size='4' color='blue'> Cada coagricultor leva o máximo de sacolas possíveis no primeiro sábado, correspondente ao mês todo </font>", unsafe_allow_html=True)
+        st.markdown("**:heavy_check_mark:** <font size='4' color='blue'> Previsão de chegada no sítio para montagem das cestas às 8h30 </font>", unsafe_allow_html=True)
+        st.markdown("**:heavy_check_mark:** <font size='4' color='blue'> Previsão de entrega das cestas na praça Sinésio Martins às 11h </font>", unsafe_allow_html=True)
+        st.markdown("**:heavy_check_mark:** <font size='4' color='blue'> Em caso de mais de 20 cestas, em carro pequeno, solicitar outro coagricultor com carro disponível para ajudar a trazer </font>", unsafe_allow_html=True)
+        st.markdown("**:heavy_check_mark:** <font size='4' color='blue'> Manter a comunicação no dia da distribuição com o grupo do ciclo 2 </font>", unsafe_allow_html=True)
+        
+        
+                   
+
+    
     
     
     st.write("-------------------------------------------")

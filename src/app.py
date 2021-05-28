@@ -130,7 +130,7 @@ def main():
     if st.checkbox("Contatos", value=False):
         st.markdown("[Instagram](https://www.instagram.com/csa_pindorama/) :sunflower:")
         st.markdown("[Facebook](https://www.facebook.com/stnossasenhora/) :hibiscus:")
-        st.markdown("<a href='tel:+5512996581433'>WhatsApp - (12) 99658-1433</a> :tulip:" , unsafe_allow_html=True)
+        st.markdown("[WhatsApp - (12) 99658-1433](https://wa.me/5512996581433) :tulip:")
 
     
 if __name__ == "__main__":

@@ -66,14 +66,19 @@ def main():
             
         na_terra = dados_csa.query("na_terra == 'x'")
         gera_tabela(na_terra, '--produtos em cultivo--')
-        
-    #no futuro, pegar a data no próprio df    
+         
+
+    dados_busca_cesta = carrega_dados(caminho_dados_csa, 'busca_cesta', ignora_primeira_linha_coluna = True)
+    # capturar o primeiro índice da aba "busca_cesta", que no caso é a próxima data para buscar cesta
+    data = dados_busca_cesta.index[0]
     
-    data = "29/mai"
     if st.checkbox(f"Na cesta em {data}",value=False):
         st.image("src/na_cesta.jpg",use_column_width=True)
         na_cesta = dados_csa.query("na_cesta == 'x'")
-        gera_tabela(na_cesta, f'--provável cesta em {data} (sujeito à adições)--')
+        if na_cesta.shape[0] == 0:
+            st.markdown("**:leaves:** <font size='4' color='blue'> Informações disponíveis até 5ª-feira </font>", unsafe_allow_html=True)
+        else:
+            gera_tabela(na_cesta, f'--provável cesta em {data} (sujeito à adições)--')
         
 
     st.write("-------------------------------------------")

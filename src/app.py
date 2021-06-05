@@ -6,15 +6,20 @@ import matplotlib.pyplot as plt
 
 st.set_page_config(page_title= "CSA Pindorama", page_icon=':seedling:')
 
-#@st.cache(allow_output_mutation=True)
 def carrega_dados(caminho, aba, ignora_primeira_linha_coluna = False):
     if ignora_primeira_linha_coluna == True:
-        dados_nutricao = pd.read_excel(caminho, sheet_name = aba, skiprows = [0])
-        dados_nutricao = dados_nutricao.set_index("Unnamed: 0")
+        dados = pd.read_excel(caminho, sheet_name = aba, skiprows = [0])
+        if dados.shape[0] != 0:
+            dic_mes = {'1': 'jan', '2': 'fev', '3': 'mar', '4': 'abr', '5': 'may','6': 'jun',
+                   '7': 'jul', '8': 'ago', '9': 'set', '10': 'out', '11': 'nov', '12': 'dez'}
+            dia = dados["Unnamed: 0"].dt.day
+            mes = dados["Unnamed: 0"].dt.month
+            dados["Unnamed: 0"] = dados["Unnamed: 0"].dt.day.map(str) + "/" + dados["Unnamed: 0"].dt.month.map(str).apply(lambda x: dic_mes[x])
+            dados = dados.set_index("Unnamed: 0")                
     else:
-        dados_nutricao = pd.read_excel(caminho, sheet_name = aba)
+        dados = pd.read_excel(caminho, sheet_name = aba)
         
-    return dados_nutricao
+    return dados
 
 
 def grafico_comparativo(dados_nutricao, lista_alimentos, atributo):
@@ -91,8 +96,11 @@ def main():
     if st.checkbox("Mutirões", value=False):
         
         dados_mutiroes = carrega_dados(caminho_dados_csa, 'mutiroes', ignora_primeira_linha_coluna = True)
-        st.table(dados_mutiroes)
-        st.markdown("**Atenção:** uso obrigatório de máscara e álcool gel/70% durante todo o mutirão. :mask: ")
+        if dados_mutiroes.shape[0] == 0:
+            st.markdown("**:leaves:** <font size='4' color='blue'> Não há mutirões agendados </font>", unsafe_allow_html=True)
+        else:
+            st.table(dados_mutiroes)
+            st.markdown("**Atenção:** uso obrigatório de máscara e álcool gel/70% durante todo o mutirão. :mask: ")
         
     if st.checkbox("Avisos", value=False):
         st.markdown("**:heavy_check_mark:** <font size='4' color='blue'> Cada coagricultor leva o máximo de sacolas possíveis no primeiro sábado, correspondente ao mês todo </font>", unsafe_allow_html=True)
@@ -101,11 +109,7 @@ def main():
         st.markdown("**:heavy_check_mark:** <font size='4' color='blue'> Em caso de mais de 20 cestas, em carro pequeno, solicitar outro coagricultor com carro disponível para ajudar a trazer </font>", unsafe_allow_html=True)
         st.markdown("**:heavy_check_mark:** <font size='4' color='blue'> Manter a comunicação no dia da distribuição com o grupo do ciclo 2 </font>", unsafe_allow_html=True)
         
-        
-                   
 
-    
-    
     
     st.write("-------------------------------------------")
     
@@ -141,5 +145,10 @@ def main():
 if __name__ == "__main__":
     main()
     
-  
 
+# melhorias
+# ajustar fonte dos gráficos (aumentar)
+# organizar o notebook
+# uma vez com o notebook organizado, criar uma seção para escrever no histórico (cestas e mutirões)
+#       para facilitar, criar uma função para escrever o histórico de cestas (copia a aba mutirões e o deixa intacto)
+#       e outra função para escrever o histórico de mutirões (copia a aba cesta e a deixa intacta)

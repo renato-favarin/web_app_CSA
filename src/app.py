@@ -49,8 +49,9 @@ def gera_tabela(df, label):
         df.index = [" "] * len(df)
         df.loc[:,'na_terra'] = " "
         df.loc[:,'na_cesta'] = " "
+        df.loc[:,'novos'] = " "
         df.loc[:, ' '] = " "
-        df.rename({'produto':label,'na_terra': '   ', 'na_cesta':'  '}, axis='columns', inplace=True)
+        df.rename({'produto':label,'na_terra': '   ', 'na_cesta':'  ', 'novos': '   '}, axis='columns', inplace=True)
         st.table(df[[label, '   ', '  ', ' ']])   
         
 def main():
@@ -84,6 +85,14 @@ def main():
             st.markdown("**:leaves:** <font size='4' color='blue'> Informações disponíveis até 5ª-feira </font>", unsafe_allow_html=True)
         else:
             gera_tabela(na_cesta, f'--provável cesta em {data} (sujeito à adições)--')
+    
+    if st.checkbox(f"Plantios da semana",value=False):
+        st.image("src/plantando.jpg",use_column_width=True)
+        novos = dados_csa.query("novos == 'x'")
+        if novos.shape[0] == 0:
+            st.markdown("**:leaves:** <font size='4' color='blue'> Não houve novos plantios nessa semana </font>", unsafe_allow_html=True)
+        else:
+            gera_tabela(novos, f'--plantios da semana--')
         
 
     st.write("-------------------------------------------")

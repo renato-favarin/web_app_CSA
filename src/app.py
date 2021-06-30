@@ -25,7 +25,6 @@ def carrega_dados(caminho, aba, ignora_primeira_linha_coluna = False):
 def grafico_comparativo(dados_nutricao, lista_alimentos, atributo):
     df = dados_nutricao.set_index('alimento')
     df = df.loc[lista_alimentos]
-    #plt.figure(figsize = (8,6))
     
     figura, ax = plt.subplots()
     ax = sns.barplot(data = df, x = df.index, y = atributo)
@@ -53,6 +52,26 @@ def gera_tabela(df, label):
         df.loc[:, ' '] = " "
         df.rename({'produto':label,'na_terra': '   ', 'na_cesta':'  ', 'novos': '   '}, axis='columns', inplace=True)
         st.table(df[[label, '   ', '  ', ' ']])   
+
+
+def lista_extenso(df,label,emoji):
+    st.markdown(f"<font size='5'> {label} </font>", unsafe_allow_html=True)
+    for item in df['produto'].sort_values().values:
+            st.markdown(f"**{emoji}** <font size='4'> {item} </font>", unsafe_allow_html=True)
+        
+    st.markdown("")
+    st.markdown("")
+    
+    
+def plantio_extenso(df,label):
+    st.markdown(f"<font size='5'> {label} </font>", unsafe_allow_html=True)
+    for item in df['produto'].values:
+            st.markdown(f"**:seedling:** <font size='4'> {item} </font>", unsafe_allow_html=True)
+        
+    st.markdown("")
+    st.markdown("")
+    
+
         
 def main():
     
@@ -64,7 +83,7 @@ def main():
 
     st.image("src/logo.jpg", use_column_width=True)
     
-    st.markdown("**Aplicativo da CSA Pindorama** :sunrise:")
+    st.markdown("**Aplicativo da CSA Pindorama** :sunrise: :green_salad:")
     
     if st.checkbox("Na terra", value=False):
         st.image("src/na_terra.jpg",use_column_width=True)
@@ -82,9 +101,13 @@ def main():
         st.image("src/na_cesta.jpg",use_column_width=True)
         na_cesta = dados_csa.query("na_cesta == 'x'")
         if na_cesta.shape[0] == 0:
-            st.markdown("**:leaves:** <font size='4' color='blue'> Informações disponíveis até 5ª-feira </font>", unsafe_allow_html=True)
+            st.markdown("**:leaves:** <font size='5'> Informações disponíveis até 5ª-feira </font>", unsafe_allow_html=True)
+            st.markdown("")
+            st.markdown("")
+            
         else:
-            gera_tabela(na_cesta, f'--provável cesta em {data} (sujeito à adições)--')
+            #gera_tabela(na_cesta, f'--provável cesta em {data} (sujeito à adições)--')
+            lista_extenso(na_cesta, f'-- provável cesta em {data} (sujeito à adições) --', ':arrow_forward:')
     
     if st.checkbox(f"Plantios da semana",value=False):
         st.image("src/plantando.jpg",use_column_width=True)
@@ -92,7 +115,10 @@ def main():
         if novos.shape[0] == 0:
             st.markdown("**:leaves:** <font size='4' color='blue'> Não houve novos plantios nessa semana </font>", unsafe_allow_html=True)
         else:
-            gera_tabela(novos, f'--plantios da semana--')
+            #gera_tabela(novos, f'--plantios da semana--')
+            lista_extenso(novos, f'--plantios da semana--', ":seedling:")
+        
+        
         
 
     st.write("-------------------------------------------")
@@ -106,17 +132,17 @@ def main():
         
         dados_mutiroes = carrega_dados(caminho_dados_csa, 'mutiroes', ignora_primeira_linha_coluna = True)
         if dados_mutiroes.shape[0] == 0:
-            st.markdown("**:leaves:** <font size='4' color='blue'> Não há mutirões agendados </font>", unsafe_allow_html=True)
+            st.markdown("**:leaves:** <font size='4'> Não há mutirões agendados </font>", unsafe_allow_html=True)
         else:
             st.table(dados_mutiroes)
             st.markdown("**Atenção:** uso obrigatório de máscara e álcool gel/70% durante todo o mutirão. :mask: ")
         
     if st.checkbox("Avisos", value=False):
-        st.markdown("**:heavy_check_mark:** <font size='4' color='blue'> Cada coagricultor leva o máximo de sacolas possíveis no primeiro sábado, correspondente ao mês todo </font>", unsafe_allow_html=True)
-        st.markdown("**:heavy_check_mark:** <font size='4' color='blue'> Previsão de chegada no sítio para montagem das cestas às 8h30 </font>", unsafe_allow_html=True)
-        st.markdown("**:heavy_check_mark:** <font size='4' color='blue'> Previsão de entrega das cestas na praça Sinésio Martins às 11h </font>", unsafe_allow_html=True)
-        st.markdown("**:heavy_check_mark:** <font size='4' color='blue'> Em caso de mais de 20 cestas, em carro pequeno, solicitar outro coagricultor com carro disponível para ajudar a trazer </font>", unsafe_allow_html=True)
-        st.markdown("**:heavy_check_mark:** <font size='4' color='blue'> Manter a comunicação no dia da distribuição com o grupo do ciclo 2 </font>", unsafe_allow_html=True)
+        st.markdown("**:heavy_check_mark:** <font size='4'> Cada coagricultor leva o máximo de sacolas possíveis no primeiro sábado, correspondente ao mês todo </font>", unsafe_allow_html=True)
+        st.markdown("**:heavy_check_mark:** <font size='4'> Previsão de chegada no sítio para montagem das cestas às 8h30 </font>", unsafe_allow_html=True)
+        st.markdown("**:heavy_check_mark:** <font size='4'> Previsão de entrega das cestas na praça Sinésio Martins às 11h </font>", unsafe_allow_html=True)
+        st.markdown("**:heavy_check_mark:** <font size='4'> Em caso de mais de 20 cestas, em carro pequeno, solicitar outro coagricultor com carro disponível para ajudar a trazer </font>", unsafe_allow_html=True)
+        st.markdown("**:heavy_check_mark:** <font size='4'> Manter a comunicação no dia da distribuição com o grupo do ciclo 2 </font>", unsafe_allow_html=True)
         
 
     

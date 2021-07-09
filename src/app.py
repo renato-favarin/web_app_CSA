@@ -10,7 +10,7 @@ def carrega_dados(caminho, aba, ignora_primeira_linha_coluna = False):
     if ignora_primeira_linha_coluna == True:
         dados = pd.read_excel(caminho, sheet_name = aba, skiprows = [0])
         if dados.shape[0] != 0:
-            dic_mes = {'1': 'jan', '2': 'fev', '3': 'mar', '4': 'abr', '5': 'may','6': 'jun',
+            dic_mes = {'1': 'jan', '2': 'fev', '3': 'mar', '4': 'abr', '5': 'mai','6': 'jun',
                    '7': 'jul', '8': 'ago', '9': 'set', '10': 'out', '11': 'nov', '12': 'dez'}
             dia = dados["Unnamed: 0"].dt.day
             mes = dados["Unnamed: 0"].dt.month
@@ -76,7 +76,11 @@ def plantio_extenso(df,label):
 def main():
     
     caminho_dados_csa = "data/csa_pindorama.xlsx"
-    dados_csa = carrega_dados(caminho_dados_csa, 'produtos') 
+    dados_csa = carrega_dados(caminho_dados_csa, 'produtos')
+    
+    dados_busca_cesta = carrega_dados(caminho_dados_csa, 'busca_cesta', ignora_primeira_linha_coluna = True)
+    # capturar o primeiro índice da aba "busca_cesta", que no caso é a próxima data para buscar cesta
+    data = dados_busca_cesta.index[0]
     
     st.title("CSA Pindorama :seedling:")
     #st.subheader("Da cultura do preço para a cultura do apreço")
@@ -92,16 +96,11 @@ def main():
         na_terra = dados_csa.query("na_terra == 'x'")
         gera_tabela(na_terra, '--produtos em cultivo--')
          
-
-    dados_busca_cesta = carrega_dados(caminho_dados_csa, 'busca_cesta', ignora_primeira_linha_coluna = True)
-    # capturar o primeiro índice da aba "busca_cesta", que no caso é a próxima data para buscar cesta
-    data = dados_busca_cesta.index[0]
-    
     if st.checkbox(f"Na cesta em {data}",value=False):
         st.image("src/na_cesta.jpg",use_column_width=True)
         na_cesta = dados_csa.query("na_cesta == 'x'")
         if na_cesta.shape[0] == 0:
-            st.markdown("**:leaves:** <font size='5'> Informações disponíveis até 5ª-feira </font>", unsafe_allow_html=True)
+            st.markdown("**:leaves:** <font size='5'> informações disponíveis até 5ª-feira </font>", unsafe_allow_html=True)
             st.markdown("")
             st.markdown("")
             
@@ -117,10 +116,65 @@ def main():
         else:
             #gera_tabela(novos, f'--plantios da semana--')
             lista_extenso(novos, f'--plantios da semana--', ":seedling:")
+     
+    if st.checkbox(f"Histórico das cestas",value=False):
+        st.image("src/historico.jpg",use_column_width=True)
+        st.markdown("<font size='5'> -- composição das últimas 3 cestas -- </font>", unsafe_allow_html=True)
         
+        hist_cesta_csa = pd.read_excel(caminho_dados_csa, engine='openpyxl',sheet_name='hist_cestas')
+        hist_lista = list(hist_cesta_csa.sort_values("data")['data'].unique())
         
+        # filtra apenas as últimas 3 cestas
+        ultimas_tres_semanas = hist_lista[-3:]
         
+        # cada uma dessas 3 variáveis captura os produtos de respectiva data
+        produtos_semana_retrasada_2 = sorted(hist_cesta_csa[hist_cesta_csa['data']==ultimas_tres_semanas[0]]['item'].values)
+        produtos_semana_retrasada_1 = sorted(hist_cesta_csa[hist_cesta_csa['data']==ultimas_tres_semanas[1]]['item'].values)
+        produtos_semana_passada = sorted(hist_cesta_csa[hist_cesta_csa['data']==ultimas_tres_semanas[2]]['item'].values)
 
+        # cria um dicionário contendo as datas e os produtos delas
+        ultimas_cestas = {ultimas_tres_semanas[0]:produtos_semana_retrasada_2,ultimas_tres_semanas[1]:produtos_semana_retrasada_1,ultimas_tres_semanas[2]:produtos_semana_passada}
+        
+        dic_mes_extenso = {'01': 'janeiro', '02': 'fevereiro', '03': 'março', '04': 'abril', '05': 'maio','06': 'junho',
+                           '07': 'julho', '08': 'agosto', '09': 'setembro', '10': 'outubro', '11': 'novembro', '12': 'dezembro'}
+        
+        
+        
+        inicio_frases = ["em ", 
+                         "já em ", 
+                         "e na última cesta, em " ]
+
+        fim_frases = [" nós tivemos na cesta: ", 
+                      " os produtos foram: ", 
+                      ", nós tivemos: "]
+        
+        # contador para as frases
+        fr = 0
+        for data in ultimas_cestas:
+            ano = pd.to_datetime(data).strftime('%Y')
+            mes_num = (pd.to_datetime(data).strftime('%m'))
+            mes = dic_mes_extenso[mes_num]
+            dia = pd.to_datetime(data).strftime('%d')
+            frase = (inicio_frases[fr] + f"{dia} de {mes}" + fim_frases[fr]  )
+            fr += 1
+            ultimo_item = len(ultimas_cestas[data])
+            num_item = 1
+            
+            # algoritmo para começar a frase sem vírgula e terminar com "e" antes do último item
+            for prod in ultimas_cestas[data]:
+                if num_item == ultimo_item:
+                    frase = frase + " e " + prod + "."
+                else:
+                    if num_item == 1:
+                        frase = frase + prod
+                    else:
+                        frase = frase + ', ' + prod
+                num_item += 1
+
+            st.markdown(f"**:arrow_forward:** <font size='4'> {frase} </font>", unsafe_allow_html=True)
+            st.markdown("")
+            st.markdown("")
+        
     st.write("-------------------------------------------")
     
     st.markdown("**Agenda e avisos:** :car: :herb: :newspaper:")
@@ -138,11 +192,11 @@ def main():
             st.markdown("**Atenção:** uso obrigatório de máscara e álcool gel/70% durante todo o mutirão. :mask: ")
         
     if st.checkbox("Avisos", value=False):
-        st.markdown("**:heavy_check_mark:** <font size='4'> Cada coagricultor leva o máximo de sacolas possíveis no primeiro sábado, correspondente ao mês todo </font>", unsafe_allow_html=True)
-        st.markdown("**:heavy_check_mark:** <font size='4'> Previsão de chegada no sítio para montagem das cestas às 8h30 </font>", unsafe_allow_html=True)
-        st.markdown("**:heavy_check_mark:** <font size='4'> Previsão de entrega das cestas na praça Sinésio Martins às 11h </font>", unsafe_allow_html=True)
-        st.markdown("**:heavy_check_mark:** <font size='4'> Em caso de mais de 20 cestas, em carro pequeno, solicitar outro coagricultor com carro disponível para ajudar a trazer </font>", unsafe_allow_html=True)
-        st.markdown("**:heavy_check_mark:** <font size='4'> Manter a comunicação no dia da distribuição com o grupo do ciclo 2 </font>", unsafe_allow_html=True)
+        st.markdown("**:heavy_check_mark:** <font size='4'> cada coagricultor leva o máximo de sacolas possíveis no primeiro sábado, correspondente ao mês todo </font>", unsafe_allow_html=True)
+        st.markdown("**:heavy_check_mark:** <font size='4'> previsão de chegada no sítio para montagem das cestas às 8h30 </font>", unsafe_allow_html=True)
+        st.markdown("**:heavy_check_mark:** <font size='4'> previsão de entrega das cestas na praça Sinésio Martins às 11h </font>", unsafe_allow_html=True)
+        st.markdown("**:heavy_check_mark:** <font size='4'> em caso de mais de 20 cestas, em carro pequeno, solicitar outro coagricultor com carro disponível para ajudar a trazer </font>", unsafe_allow_html=True)
+        st.markdown("**:heavy_check_mark:** <font size='4'> manter a comunicação no dia da distribuição com o grupo do ciclo 2 </font>", unsafe_allow_html=True)
         
 
     

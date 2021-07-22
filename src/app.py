@@ -89,12 +89,6 @@ def main():
     
     st.markdown("**Aplicativo da CSA Pindorama** :sunrise: :green_salad:")
     
-    if st.checkbox("Na terra", value=False):
-        st.image("src/na_terra.jpg",use_column_width=True)
-
-            
-        na_terra = dados_csa.query("na_terra == 'x'")
-        gera_tabela(na_terra, '--produtos em cultivo--')
          
     if st.checkbox(f"Na cesta em {data}",value=False):
         st.image("src/na_cesta.jpg",use_column_width=True)
@@ -107,16 +101,8 @@ def main():
         else:
             #gera_tabela(na_cesta, f'--provável cesta em {data} (sujeito à adições)--')
             lista_extenso(na_cesta, f'-- provável cesta em {data} (sujeito à adições) --', ':arrow_forward:')
+            
     
-    if st.checkbox(f"Plantios da semana",value=False):
-        st.image("src/plantando.jpg",use_column_width=True)
-        novos = dados_csa.query("novos == 'x'")
-        if novos.shape[0] == 0:
-            st.markdown("**:leaves:** <font size='4' color='blue'> Não houve novos plantios nessa semana </font>", unsafe_allow_html=True)
-        else:
-            #gera_tabela(novos, f'--plantios da semana--')
-            lista_extenso(novos, f'--plantios da semana--', ":seedling:")
-     
     if st.checkbox(f"Histórico das cestas",value=False):
         st.image("src/historico.jpg",use_column_width=True)
         st.markdown("<font size='5'> -- composição das últimas 3 cestas -- </font>", unsafe_allow_html=True)
@@ -173,7 +159,26 @@ def main():
 
             st.markdown(f"**:arrow_forward:** <font size='4'> {frase} </font>", unsafe_allow_html=True)
             st.markdown("")
-            st.markdown("")
+            st.markdown("")  
+    
+    
+    if st.checkbox(f"Plantios da semana",value=False):
+        st.image("src/plantando.jpg",use_column_width=True)
+        novos = dados_csa.query("novos == 'x'")
+        if novos.shape[0] == 0:
+            st.markdown("**:leaves:** <font size='4' color='blue'> Não houve novos plantios nessa semana </font>", unsafe_allow_html=True)
+        else:
+            #gera_tabela(novos, f'--plantios da semana--')
+            lista_extenso(novos, f'--plantios da semana--', ":seedling:")
+    
+    
+    if st.checkbox("Na terra", value=False):
+        st.image("src/na_terra.jpg",use_column_width=True)
+
+            
+        na_terra = dados_csa.query("na_terra == 'x'")
+        gera_tabela(na_terra, '--produtos em cultivo--')
+ 
         
     st.write("-------------------------------------------")
     

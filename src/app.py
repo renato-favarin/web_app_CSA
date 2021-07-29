@@ -100,7 +100,7 @@ def main():
             
         else:
             #gera_tabela(na_cesta, f'--provável cesta em {data} (sujeito à adições)--')
-            lista_extenso(na_cesta, f'-- provável cesta em {data} (sujeito à adições) --', ':arrow_forward:')
+            lista_extenso(na_cesta, f'-- provável cesta em {data} (sujeito à alterações devido à intempéries - geada, chuva, seca) --', ':arrow_forward:')
             
     
     if st.checkbox(f"Histórico das cestas",value=False):

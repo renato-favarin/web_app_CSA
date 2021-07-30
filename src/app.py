@@ -199,7 +199,7 @@ def main():
     if st.checkbox("Avisos", value=False):
         st.markdown("**:heavy_check_mark:** <font size='4'> cada coagricultor leva o máximo de sacolas possíveis no primeiro sábado, correspondente ao mês todo </font>", unsafe_allow_html=True)
         st.markdown("**:heavy_check_mark:** <font size='4'> previsão de chegada no sítio para montagem das cestas às 8h30 </font>", unsafe_allow_html=True)
-        st.markdown("**:heavy_check_mark:** <font size='4'> previsão de entrega das cestas na praça Sinésio Martins às 11h </font>", unsafe_allow_html=True)
+        st.markdown("**:heavy_check_mark:** <font size='4'> previsão de entrega das cestas na praça Sinésio Martins ou praça do Sol (esperar a confirmação no grupo do WhatsApp) às 11h (horário sujeito à alteração, atentar-se aos avisos do grupo do WhatsApp) </font>", unsafe_allow_html=True)
         st.markdown("**:heavy_check_mark:** <font size='4'> em caso de mais de 20 cestas, em carro pequeno, solicitar outro coagricultor com carro disponível para ajudar a trazer </font>", unsafe_allow_html=True)
         st.markdown("**:heavy_check_mark:** <font size='4'> manter a comunicação no dia da distribuição com o grupo do ciclo 2 </font>", unsafe_allow_html=True)
         

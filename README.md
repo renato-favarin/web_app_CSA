@@ -16,8 +16,12 @@ Todas as informações utilizadas pelo aplicativo estão presentes em um único 
 'na_terra': produtos atualmente em cultivo
 'na_cesta': produtos na próxima cesta
 'novos': produto no último lote de plantio realizado <br>
-basta marcar com um 'x' para instruir o app sobre determinado item
-  </pre>
+basta marcar com um 'x' para instruir o app sobre determinado item <br>
+
+obs.: quando ainda não há nenhum produto previsto na cesta (por ainda estar longe o dia da 
+distribuição), basta remover todos os 'x' da coluna 'na_cesta' que um aviso será emitido 
+pelo aplicativo.
+</pre>
   
 ## busca_cesta
 <pre>Agenda dos coprodutores que buscarão a cesta nos próximos dias.
@@ -49,5 +53,5 @@ itens em cultivo pela CSA. </pre>
 
 # Futuras melhorias
 em futuras revisões, serão flexibilizados:
-- avisos: cada app poderá ter a quantidade e os avisos que desejarem; a fonte de informação será um nova aba
+- avisos: cada app poderá ter a quantidade e os avisos que desejarem; a fonte de informação será uma nova aba
 - contatos: cada app poderá ter a quantidade de contatos que quiser; a fonte de informação também será uma nova aba

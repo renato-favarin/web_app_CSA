@@ -34,7 +34,7 @@ Por enquanto está fixo em 2 carros por semana, conforme necessidade atual da CS
 ## hist_cestas
 <pre>Identificação dos itens presentes nas cestas em suas respectivas datas, para controle de histórico. </pre>
 
-## hist_cestas
+## qtde_cestas
 <pre>Quantidade de cestas entregues, para controle de histórico. </pre>
 
 ## info_nutricional

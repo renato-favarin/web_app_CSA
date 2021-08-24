@@ -38,7 +38,8 @@ Por enquanto está fixo em 2 carros por semana, conforme necessidade atual da CS
 <pre>Quantidade de cestas entregues, para controle de histórico. </pre>
 
 ## info_nutricional
-<pre>Informação nutricional obtida de fonte confiável (http://tabnut.dis.epm.br/) dos itens em cultivo pela CSA. </pre>
+<pre>Informação nutricional obtida de fonte confiável (http://tabnut.dis.epm.br/) dos 
+itens em cultivo pela CSA. </pre>
 
 ## hist_plantios
 <pre>Identificação dos itens plantados em suas respectivas datas, para controle de histórico. </pre>

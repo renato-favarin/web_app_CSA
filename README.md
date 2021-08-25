@@ -1,7 +1,7 @@
 <img src="/img/csa_logo.png" alt="CSA Pindorama logo" title="CSA" align="right" height="180" class="center"/>
 
 # Aplicativo web CSA
-O aplicativo em produção: http://tiny.cc/csaPindorama
+O aplicativo, hospedado no Streamlit, pode ser acessado aqui: http://tiny.cc/csaPindorama.
 
 ## Contexto
 

@@ -7,7 +7,7 @@ O aplicativo, hospedado no Streamlit, pode ser acessado aqui: http://tiny.cc/csa
 
 O aplicativo foi desenvolvido para facilitar a programação de compras e unificar um local para a disposição das informações relevantes da CSA (Comunidade que Sustenta a Agricultura) que faço parte. <br>
 Pode ser facilmente adaptada para qualquer outra CSA. <br>
-Todas as informações utilizadas pelo aplicativo estão presentes em um único arquivo Excel, dividido em diversas abas, mostradas a seguir:
+Todas as informações utilizadas pelo aplicativo estão presentes em um único arquivo Excel ('csa_pindorama.xlsx', disponível na pasta 'data'), dividido em diversas abas, explicadas a seguir:
 
 ## Abas do arquivo Excel e apresentação das informações no aplicativo
 

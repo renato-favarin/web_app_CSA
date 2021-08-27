@@ -1,26 +1,21 @@
 <img src="/img/csa_logo.png" alt="CSA Pindorama logo" title="CSA" align="right" height="180" class="center"/>
 
 # Aplicativo web CSA
-O aplicativo em produção: http://tiny.cc/csaPindorama
+O aplicativo, hospedado no Streamlit, pode ser acessado aqui: http://tiny.cc/csaPindorama.
 
 ## Contexto
 
 O aplicativo foi desenvolvido para facilitar a programação de compras e unificar um local para a disposição das informações relevantes da CSA (Comunidade que Sustenta a Agricultura) que faço parte. <br>
-Pode ser facilmente adaptada para qualquer outra CSA.
+Pode ser facilmente adaptada para qualquer outra CSA. <br>
+Todas as informações utilizadas pelo aplicativo estão presentes em um único arquivo Excel ('csa_pindorama.xlsx', disponível na pasta 'data'), dividido em diversas abas, explicadas a seguir:
 
-## Demonstração do aplicativo
-
-<ADD GIF>
-
-## Fonte de informações
-
-Todas as informações utilizadas pelo aplicativo estão presentes em um único arquivo Excel, dividido em diversas abas:
+## Abas do arquivo Excel e apresentação das informações no aplicativo
 
 ### produtos
 <pre>Lista dos produtos disponíveis 'na_terra', 'na_cesta' e 'novos'. <br>
 'na_terra': produtos atualmente em cultivo
 'na_cesta': produtos na próxima cesta
-'novos': produto no último lote de plantio realizado <br>
+'novos': plantios da semana ou simplesmente últimos plantios. <br>
 basta marcar com um 'x' para instruir o app sobre determinado item <br>
 
 obs.: quando ainda não há nenhum produto previsto na cesta (por ainda estar longe o dia da 
@@ -33,7 +28,16 @@ pelo aplicativo.
 
 </pre>
 
+### hist_cestas
+<pre>Identificação dos itens presentes nas cestas em suas respectivas datas, para controle de histórico.
+<p align="center">
+  <img src="/img/hist_cestas.png">
+</p>
+</pre>
 
+<p align="center">
+  <img src="/img/csa1.gif">
+</p>
 
 ### busca_cesta
 <pre>Agenda dos coprodutores que buscarão a cesta nos próximos dias.
@@ -57,19 +61,9 @@ Por enquanto está fixo em 2 carros por semana, conforme necessidade atual da CS
 
 </pre>
 
-### hist_cestas
-<pre>Identificação dos itens presentes nas cestas em suas respectivas datas, para controle de histórico.
 <p align="center">
-  <img src="/img/hist_cestas.png">
+  <img src="/img/csa2.gif">
 </p>
-</pre>
-
-### qtde_cestas
-<pre>Quantidade de cestas entregues, para controle de histórico. 
-<p align="center">
-  <img src="/img/qtde_cestas.png">
-</p>
-</pre>
 
 ### info_nutricional
 <pre>Informação nutricional obtida de fonte confiável (http://tabnut.dis.epm.br/) dos 
@@ -78,6 +72,21 @@ itens em cultivo pela CSA.
   <img src="/img/info_nutricional.png">
 </p>
 </pre>
+
+<p align="center">
+  <img src="/img/csa3.gif">
+</p>
+
+
+## Demais abas por enquanto sem impacto direto no aplicativo
+
+### qtde_cestas
+<pre>Quantidade de cestas entregues, para controle de histórico. 
+<p align="center">
+  <img src="/img/qtde_cestas.png">
+</p>
+</pre>
+
 
 ### hist_plantios
 <pre>Identificação dos itens plantados em suas respectivas datas, para controle de histórico. 

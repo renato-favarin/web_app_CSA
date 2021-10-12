@@ -94,7 +94,8 @@ def main():
         st.image("src/na_cesta.jpg",use_column_width=True)
         na_cesta = dados_csa.query("na_cesta == 'x'")
         if na_cesta.shape[0] == 0:
-            st.markdown("**:leaves:** <font size='5'> informações disponíveis até 5ª-feira </font>", unsafe_allow_html=True)
+            #st.markdown("**:leaves:** <font size='5'> informações disponíveis até 5ª-feira </font>", unsafe_allow_html=True)
+            st.markdown("**:leaves:** <font size='5'> excepcionamente nesta 5ª e 6ª-feira (14 e 15/10)  não teremos previsão de cesta para sábado (16/10); favor informar-se no grupo do whatsapp - (12) 99658-1433 </font>", unsafe_allow_html=True)
             st.markdown("")
             st.markdown("")
             
